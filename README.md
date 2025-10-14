@@ -1,4 +1,15 @@
 # KTPM
+Note:
+- Làm trên visual cần cài node.js để chạy các lệnh như npm, npx
+- Lỗi ở đâu thì cài các gói mà nó báo lỗi
+
+Lệnh kiểm tra
+```
+node -v
+npm -v
+git --version
+```
+
 Lệnh Clone git
 ```
 git clone https://github.com/phong1675/KTPM.git
