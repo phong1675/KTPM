@@ -1,0 +1,8 @@
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_b3JpZW50ZWQtY2FpbWFuLTUzLmNsZXJrLmFjY291bnRzLmRldiQ
+CLERK_SECRET_KEY=sk_test_560yZW0PyBl2WtvU3wioZnQPimi24TJGAsdGZL8xnN
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+DATABASE_URL="postgresql://neondb_owner:npg_Frz37exRuskD@ep-bold-bread-aez04hhz-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"

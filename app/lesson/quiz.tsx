@@ -34,9 +34,14 @@ export const Quiz = ({
         return uncompletedIndex === -1 ? 0 : uncompletedIndex;
     });
 
+    const [selectedOption, setSelectedOption] = useState<number>();
+    const [status, setStatus] = useState("none");
     const challenge = challenges[activeIndex];
     const options = challenge?.challengeOptions ?? [];
 
+    const onSelect = (id: number) => {
+        if (status !== "none") return;
+    }
 
     const title = challenge.type === "ASSIST" 
         ? "Select the correct meaning"
