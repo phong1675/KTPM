@@ -3,13 +3,13 @@ import { NextRespone } from "next/server";
 import db from "@/db/drizzle";
 import { courses } from "@/db/schema";
 import { isAdmin } from "@/lib/admin";
-import { courses } from "@/db/schema";
+import { challengeOptions } from "@/db/schema";
 
 export const GET = async () => {
     if(!isAdmin()){
         return new NextResponse("Auauthorized", { status: 401};)
     }
-    const data = await db.query.courses.findMany();
+    const data = await db.query.challengeOptions.findMany();
 
     return NextRespone.json(data);
 }
@@ -21,7 +21,7 @@ export const POST = async (req: Request) => {
 
     const body = await req.json();
 
-    const data = await db.insert{course}.values({
+    const data = await db.insert{challengeOptions}.values({
         ...body,
 
     }).returning();

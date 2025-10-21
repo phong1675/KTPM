@@ -1,8 +1,8 @@
-import { SimpleForm, Create, TextInput, required }  from "react-admin";
+import { SimpleForm, Edit, TextInput, required }  from "react-admin";
 
 export const CourseEdit = () => {
     return (
-        <Create>
+        <Edit>
             <SimpleForm>
                 <TextInput
                 source="id"
@@ -22,6 +22,6 @@ export const CourseEdit = () => {
                 label="Image"
                 />
                 </SimpleForm>
-        </Create>    
+        </Edit>    
     );
 };
