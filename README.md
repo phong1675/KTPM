@@ -109,6 +109,14 @@ Truy cập: [http://localhost:3000](http://localhost:3000)
 
 ---
 
+## 🏁 Định hướng phát triển
+
+- Bổ sung học nhiều ngôn ngữ khác nhau  
+- Tích hợp chatbot hỗ trợ luyện tập  
+- Phát triển ứng dụng di động (React Native)
+
+---
+
 ## 👨‍🏫 Thành Viên
 
 | Họ và tên | MSSV | 
@@ -117,11 +125,3 @@ Truy cập: [http://localhost:3000](http://localhost:3000)
 | Phùng Gia Minh | 23010869 |
 | Hoàng Văn Dũng | 23010438 |
 | Nguyễn Văn Hiệp | 23010859 |
-
----
-
-## 🏁 Định hướng phát triển
-
-- Bổ sung học nhiều ngôn ngữ khác nhau  
-- Tích hợp chatbot hỗ trợ luyện tập  
-- Phát triển ứng dụng di động (React Native)
