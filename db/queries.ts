@@ -7,6 +7,7 @@ import {
     challengeProgress,
     courses, 
     units, 
+    lessons,
     userProgress,
     userSubscription
 } from "@/db/schema";
@@ -169,7 +170,7 @@ export const getLesson = cache(async (id?: number) => {
     }
 
     const data = await db.query.lessons.findFirst({
-        where: eq(units.id, lessonId),
+        where: eq(lessons.id, lessonId),
         with: {
             challenges: {
                 orderBy: (challenges, { asc }) => [asc(challenges.order)],
