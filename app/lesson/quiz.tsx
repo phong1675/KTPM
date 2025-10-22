@@ -28,7 +28,7 @@ type Props ={
         challengeOptions: typeof challengeOptions.$inferSelect[];
     })[];
     userSubsription: typeof userSubscription.$inferSelect & {
-        isAcitve: boolean;
+        isActive: boolean;
     } | null;
 };
 

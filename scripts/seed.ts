@@ -12,14 +12,15 @@ const main = async () => {
     try {
         console.log("Seeding database");
 
-        await db.delete(schema.courses);
-        await db.delete(schema.userProgress);
-        await db.delete(schema.units);
-        await db.delete(schema.lessons);
-        await db.delete(schema.challenges);
-        await db.delete(schema.challengeOptions);
         await db.delete(schema.challengeProgress);
+        await db.delete(schema.challengeOptions);
+        await db.delete(schema.challenges);
+        await db.delete(schema.lessons);
+        await db.delete(schema.units);
+        await db.delete(schema.userProgress);
         await db.delete(schema.userSubscription);
+        await db.delete(schema.courses);
+
 
 
         await db.insert(schema.courses).values([
@@ -136,7 +137,7 @@ const main = async () => {
             },
         ]);
 
-                await db.insert(schema.challengeOptions).values([
+        await db.insert(schema.challengeOptions).values([
             {
                 challengeId: 2, //"the man"?
                 correct: true,
@@ -184,26 +185,99 @@ const main = async () => {
         await db.insert(schema.challenges).values([
             {
                 id: 4,
-                lessonId: 2, //Verbs
+                lessonId: 2, // Verbs
                 type: "SELECT",
                 order: 1,
-                question: 'Which one of these is the "the man"?',
+                question: 'Which one of these is "to eat"?',
             },
             {
                 id: 5,
-                lessonId: 2, //Verbs
+                lessonId: 2,
                 type: "ASSIST",
                 order: 2,
-                question: '"the man"?',
+                question: '"to eat"?',
             },
             {
                 id: 6,
-                lessonId: 2, // Verbs
+                lessonId: 2,
                 type: "SELECT",
                 order: 3,
-                question: 'Which one of these is the "the robot"?',
+                question: 'Which one of these is "to drink"?',
             },
         ]);
+
+        await db.insert(schema.challengeOptions).values([
+            // Challenge 4: "to eat"
+            {
+                challengeId: 4,
+                correct: true,
+                text: "comer",
+                audioSrc: "/es_eat.mp3",
+                imageSrc: "/eat.svg",
+            },
+            {
+                challengeId: 4,
+                correct: false,
+                text: "beber",
+                audioSrc: "/es_drink.mp3",
+                imageSrc: "/drink.svg",
+            },
+            {
+                challengeId: 4,
+                correct: false,
+                text: "leer",
+                audioSrc: "/es_read.mp3",
+                imageSrc: "/read.svg",
+            },
+        ]);
+
+        await db.insert(schema.challengeOptions).values([
+            // Challenge 5: assist
+            {
+                challengeId: 5,
+                correct: true,
+                text: "comer",
+                audioSrc: "/es_eat.mp3",
+            },
+            {
+                challengeId: 5,
+                correct: false,
+                text: "beber",
+                audioSrc: "/es_drink.mp3",
+            },
+            {
+                challengeId: 5,
+                correct: false,
+                text: "leer",
+                audioSrc: "/es_read.mp3",
+            },
+        ]);
+
+        await db.insert(schema.challengeOptions).values([
+            // Challenge 6: "to drink"
+            {
+                challengeId: 6,
+                correct: true,
+                text: "beber",
+                audioSrc: "/es_drink.mp3",
+                imageSrc: "/drink.svg",
+            },
+            {
+                challengeId: 6,
+                correct: false,
+                text: "comer",
+                audioSrc: "/es_eat.mp3",
+                imageSrc: "/eat.svg",
+            },
+            {
+                challengeId: 6,
+                correct: false,
+                text: "leer",
+                audioSrc: "/es_read.mp3",
+                imageSrc: "/read.svg",
+            },
+        ]);
+
         console.log("Seeding finished");
     } catch (error) {
         console.error(error);
